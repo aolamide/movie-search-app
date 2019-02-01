@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.card:hover{
+  transform : scale(1.05);
+  z-index : -1000;
+  cursor: pointer;
+}
+button{
+  padding: 5px;
+  background-color: orange;
+  color: white;
+  border-radius: 16px;
+  outline: none
+}
