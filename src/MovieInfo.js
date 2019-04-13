@@ -3,7 +3,9 @@ import errorImage from './no-image.gif';
 
 const MovieInfo = ({ movieInfo, changeRoute }) => {
     const { Title, Poster, Rated, Released, Runtime, Actors, Plot,imdbRating : Rating, BoxOffice, Production } = movieInfo;
+    console.log(Rating);
     return(
+        Title ? 
         <div>
             <button onClick={changeRoute} style={{position: 'fixed', top: '5px', left : '5px'}}>{'<--'}</button>
             
@@ -20,6 +22,8 @@ const MovieInfo = ({ movieInfo, changeRoute }) => {
                 <p>{`Box Office :  ${BoxOffice}`}</p>
             </fieldset> 
         </div>
+        :
+        <p style={{marginTop: '70px'}}>Loading...</p>
     )
 }
 
