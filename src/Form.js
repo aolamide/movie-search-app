@@ -2,10 +2,10 @@ import React from 'react';
 
 const Form = ({ onInputChange, onSearch }) => {
     return(
-        <div style={formStyle}>
+        <form style={formStyle}>
             <input placeholder='movie or series name...' type='text' onChange={onInputChange} />
             <button onClick={onSearch}>Search</button>
-        </div>
+        </form>
     )
 }
 

@@ -15,7 +15,8 @@ class App extends Component {
   onInputChange = (e) => {
     this.setState({input : e.target.value})
   }
-  onSearch = () => {
+  onSearch = (e) => {
+    e.preventDefault();
     fetch(`https://omdbapi.com/?apikey=61fddd85&s=${this.state.input}`)
             .then(res => res.json())
             .then(data => this.setState({result : data.Search}))

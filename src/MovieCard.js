@@ -6,7 +6,7 @@ const MovieCard = ({movie, singleMovie}) => {
     return(
         <div className='card' style={cardStyle}>
             <img width='300px' height='300px' src={Poster === 'N/A' ? errorImage : Poster} alt='movie' />
-            <p><h3>{ Title }</h3></p>
+            <h3>{ Title }</h3>
             <p>{ Year }</p>
             <p>imdbID : { imdbID }</p>
             <button onClick={() => singleMovie(imdbID)}>See More</button>
