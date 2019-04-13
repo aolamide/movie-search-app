@@ -13,24 +13,25 @@ class  Container extends React.Component{
 
     }
     singleMovie = (id) => {
-        this.setState({route : 'singlemovie'})
         fetch(`https://omdbapi.com/?apikey=61fddd85&i=${id}&plot=full`)
             .then(res => res.json())
             .then(data => this.setState({movieinfo : data}))
+            .then(this.setState({route : 'singlemovie'}))
             .catch(err => console.log('oops', err))
     }
 
     changeRoute = () => {
-        this.setState({route : 'moviecards'})
+        this.setState({route : 'moviecards'});
+        this.setState({movieinfo : []})
     }
     render(){
       return(
          this.state.route === 'moviecards' ? 
          <div>
-            <Form  onInputChange={this.props.onInputChange} onSearch={this.props.onSearch}/>
+            <Form onInputChange={this.props.onInputChange} onSearch={this.props.onSearch}/>
             <MovieCards singleMovie={this.singleMovie} data={this.props.result} />
          </div>
-          : 
+          :
          <MovieInfo changeRoute={this.changeRoute} movieInfo={this.state.movieinfo} />
       )
       
