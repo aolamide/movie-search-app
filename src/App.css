@@ -6,4 +6,8 @@ button{
   cursor: pointer;
 }
 
+input, button{
+  border : none;
+}
+
 

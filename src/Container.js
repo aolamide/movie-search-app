@@ -2,6 +2,7 @@ import React from 'react';
 import MovieCards from './MovieCards';
 import MovieInfo from './MovieInfo';
 import Form from './Form';
+import Header from './Header';
 
 class  Container extends React.Component{
     constructor(props){
@@ -28,8 +29,14 @@ class  Container extends React.Component{
       return(
          this.state.route === 'moviecards' ? 
          <div>
-            <Form onInputChange={this.props.onInputChange} onSearch={this.props.onSearch}/>
-            <MovieCards singleMovie={this.singleMovie} data={this.props.result} />
+            <div className="app-head">
+                <Header />
+                <Form onInputChange={this.props.onInputChange} onSearch={this.props.onSearch}/>
+            </div>
+            <div className="app-body">
+                <MovieCards singleMovie={this.singleMovie} data={this.props.result} />  
+            </div>
+           
          </div>
           :
          <MovieInfo changeRoute={this.changeRoute} movieInfo={this.state.movieinfo} />

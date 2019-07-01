@@ -1,16 +1,23 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #2b2b2b;
 }
 .card:hover{
   transform : scale(1.05);
-  z-index : -1000;
+  /* z-index : -1000; */
   cursor: pointer;
+  color: orange
 }
-button{
-  padding: 5px;
-  background-color: orange;
-  color: white;
-  border-radius: 16px;
-  outline: none
+.app-head{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  background-color: #2b2b2b;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.app-body{
+  margin-top: 100px;
 }
