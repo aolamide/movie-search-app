@@ -5,7 +5,7 @@ const MovieCard = ({movie, singleMovie}) => {
     const { Poster, Title, Year, imdbID } = movie;
     return(
         <div className='card' style={cardStyle}>
-            <img width='300px' height='300px' src={Poster === 'N/A' ? errorImage : Poster} alt='movie' />
+            <img width='300px' height='300px' src={Poster === 'N/A' ? errorImage : Poster} alt={`${Title}`} />
             <h3>{ Title }</h3>
             <p>{ Year }</p>
             <p>imdbID : { imdbID }</p>
