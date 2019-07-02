@@ -1,0 +1,31 @@
+.poster{
+    width: 40%;
+    height: auto;
+}
+.main{
+    display: flex;
+}
+.infoPage{
+    padding: 10px;
+    text-align: left;
+    margin-top: 25px;
+}
+.info{
+    padding: 14px;
+}
+p{
+    margin: 5px
+}
+.moreInfo{
+    text-align: center;
+    padding: 12px;
+}
+
+  
+  
+
+@media screen and (max-width:800px){
+    .poster{
+        height: 250px;
+    }
+}

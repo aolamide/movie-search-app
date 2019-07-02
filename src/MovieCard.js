@@ -4,24 +4,20 @@ import errorImage from './no-image.gif';
 const MovieCard = ({movie, singleMovie}) => {
     const { Poster, Title, Year, imdbID } = movie;
     return(
-        <div className='card' style={cardStyle}>
-            <img width='300px' height='300px' src={Poster === 'N/A' ? errorImage : Poster} alt={`${Title}`} />
-            <h3>{ Title }</h3>
+        <div onClick={() => singleMovie(imdbID)} className='card' style={cardStyle}>
+            <img width='150px' height='200px' src={Poster === 'N/A' ? errorImage : Poster} alt={Title} />
+            <h4>{ Title } </h4>
             <p>{ Year }</p>
-            <p>imdbID : { imdbID }</p>
-            <button onClick={() => singleMovie(imdbID)}>See More</button>
         </div>
     )
 }
 
 const cardStyle = {
-    border: '2px solid black',
     margin: '10px',
     borderRadius: '5px',
-    width: '300px',
+    width: '150px',
     display : 'inline-block',
-    height: '500px'
-
+    height: '300px'
 }
 
 

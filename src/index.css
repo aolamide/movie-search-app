@@ -1,16 +1,53 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #2b2b2b;
+  color: #e7e7e7;
 }
-.card:hover{
+.card:hover, .card:active{
   transform : scale(1.05);
-  z-index : -1000;
   cursor: pointer;
+  color: rgb(236, 159, 15)
 }
-button{
-  padding: 5px;
-  background-color: orange;
-  color: white;
-  border-radius: 16px;
-  outline: none
+.app-head{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  background-color: #2b2b2b;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.app-body{
+  margin-top: 100px;
+}
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid orange;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+a{
+  padding: 1px 8px;
 }

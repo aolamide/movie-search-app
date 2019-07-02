@@ -8,8 +8,9 @@ class App extends Component {
     super()
     this.state = {
       input : '',
-      result : []
-
+      result : [],
+      searchText : null,
+      loading: false
     }
   }
   onInputChange = (e) => {
@@ -17,15 +18,23 @@ class App extends Component {
   }
   onSearch = (e) => {
     e.preventDefault();
+    this.setState({loading : true});
     fetch(`https://omdbapi.com/?apikey=61fddd85&s=${this.state.input}`)
             .then(res => res.json())
-            .then(data => this.setState({result : data.Search}))
+            .then(data => {
+              if (data.Error){
+                this.setState({result : data})
+              }
+              else {
+                this.setState({result : data.Search, searchText : this.state.input, loading : false})
+              }
+            })
             .catch(err => console.log('oops', err))
   }
   render() {
     return (
       <div className="App">
-        <Container onInputChange={this.onInputChange} onSearch={this.onSearch} result={this.state.result} />
+        <Container onInputChange={this.onInputChange} onSearch={this.onSearch} result={this.state.result} searchText={this.state.searchText} loading={this.state.loading}/>
       </div>
     );
   }
