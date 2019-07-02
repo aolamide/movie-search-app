@@ -18,6 +18,7 @@ class App extends Component {
   }
   onSearch = (e) => {
     e.preventDefault();
+    document.querySelector('input').blur();
     this.setState({loading : true});
     fetch(`https://omdbapi.com/?apikey=61fddd85&s=${this.state.input}`)
             .then(res => res.json())
