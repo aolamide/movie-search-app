@@ -34,7 +34,7 @@ class  Container extends React.Component{
                 <Form onInputChange={this.props.onInputChange} onSearch={this.props.onSearch}/>
             </div>
             <div className="app-body">
-                <MovieCards singleMovie={this.singleMovie} data={this.props.result} />  
+                <MovieCards singleMovie={this.singleMovie} data={this.props.result} searchText={this.props.searchText} loading={this.props.loading} />  
             </div>
            
          </div>

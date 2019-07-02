@@ -4,9 +4,9 @@ import errorImage from './no-image.gif';
 const MovieCard = ({movie, singleMovie}) => {
     const { Poster, Title, Year, imdbID } = movie;
     return(
-        <div className='card' style={cardStyle}>
-            <img width='150px' height='150px' src={Poster === 'N/A' ? errorImage : Poster} alt={`${Title}`} />
-            <h4 onClick={() => singleMovie(imdbID)}>{ Title } </h4>
+        <div onClick={() => singleMovie(imdbID)} className='card' style={cardStyle}>
+            <img width='150px' height='200px' src={Poster === 'N/A' ? errorImage : Poster} alt={Title} />
+            <h4>{ Title } </h4>
             <p>{ Year }</p>
         </div>
     )
