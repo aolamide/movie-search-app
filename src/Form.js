@@ -2,9 +2,9 @@ import React from 'react';
 
 const Form = ({ onInputChange, onSearch }) => {
     return(
-        <form style={formStyle}>
+        <form style={formStyle} onSubmit={onSearch}>
             <input style={inputStyle} placeholder='Search for movies, series, tv shows...' type='text' onChange={onInputChange} />
-            <button style = {searchStyle} onClick={onSearch}><i className="fa fa-search"></i></button>
+            <button style = {searchStyle}><i className="fa fa-search"></i></button>
         </form>
     )
 }
