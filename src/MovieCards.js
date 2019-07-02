@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
+import Footer from './Footer';
 
 const MovieCards = ({data, singleMovie, searchText, loading}) => {
     if(loading){
@@ -13,6 +14,7 @@ const MovieCards = ({data, singleMovie, searchText, loading}) => {
             <div style={{paddingTop: '70px'}}>
                 <p>Showing results for "{searchText}"</p>
                  {data.map(movie => <MovieCard singleMovie={singleMovie} key={movie.imdbID} movie={movie} />)}
+                <Footer />
             </div>
            )
     }
