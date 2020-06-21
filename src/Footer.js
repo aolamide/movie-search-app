@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return(
        <div style={{textAlign : 'center', background: 'orange'}}>
-           <p>Made with <i className="fa fa-heart"></i> by Aboyeji Olamide</p>
+           <p>Made with <i className="fa fa-heart"></i>by  <a href='https://aolamide.tech'>Olamide Aboyeji</a></p>
            <div>
                 <a href="https://linkedin.com/in/aolamide" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin fa-2x"></i></a>
                 <a href="https://github.com/aolamide" target="_blank" rel="noopener noreferrer"><i className="fa fa-github fa-2x"></i></a>

@@ -1,6 +1,6 @@
 {
   "name": "movie-app",
-  "homepage": "http://aolamide.github.io/movie-search-app",
+  "homepage": "https://movie-app.aolamide.tech",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
