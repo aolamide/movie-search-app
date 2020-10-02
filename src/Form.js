@@ -11,10 +11,8 @@ const Form = ({ onInputChange, onSearch }) => {
 
 const formStyle = {
     padding: '15px',
-    // position: 'fixed',
     width: 'auto',
     margin : 'auto',
-    // zIndex: '1000',
     fontSize : '10px'
 }
 const searchStyle = {

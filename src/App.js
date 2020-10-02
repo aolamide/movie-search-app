@@ -1,44 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Container from './Container';
 
-
-class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      input : '',
-      result : [],
-      searchText : null,
-      loading: false
-    }
-  }
-  onInputChange = (e) => {
-    this.setState({input : e.target.value})
-  }
-  onSearch = (e) => {
+const App = () => {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState([]);
+  const [searchText, setSearchText] = useState('');
+  const [loading, setLoading] = useState(false);
+  const onSearch = (e) => {
     e.preventDefault();
     document.querySelector('input').blur();
-    this.setState({loading : true});
-    fetch(`https://omdbapi.com/?apikey=61fddd85&s=${this.state.input}`)
-            .then(res => res.json())
-            .then(data => {
-              if (data.Error){
-                this.setState({result : data})
-              }
-              else {
-                this.setState({result : data.Search, searchText : this.state.input, loading : false})
-              }
-            })
-            .catch(err => console.log('oops', err))
+    setLoading(true);
+    fetch(`https://omdbapi.com/?apikey=61fddd85&s=${input}`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.Error){
+        this.setState({result : data})
+      }
+      else {
+        setResult(data.Search)
+        setSearchText(input)
+      }
+    })
+    .catch(err => console.log('oops', err))
+    .finally(() => setLoading(false))
   }
-  render() {
-    return (
-      <div className="App">
-        <Container onInputChange={this.onInputChange} onSearch={this.onSearch} result={this.state.result} searchText={this.state.searchText} loading={this.state.loading}/>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Container onInputChange={e => setInput(e.target.value)} onSearch={onSearch} result={result} searchText={searchText} loading={loading}/>
+    </div>
+  );
+
 }
 
 export default App;
