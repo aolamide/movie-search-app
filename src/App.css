@@ -2,13 +2,29 @@
   text-align: center;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-input, button{
-  border : none;
-  outline: none
+input,
+button {
+  border: none;
+  outline: none;
 }
 
-
+.footer {
+  background-color: orange;
+  padding: 5px;
+  text-align: center;
+}
+.footer p {
+  font-size: 17px;
+}
+.footer p a {
+  color: black;
+  opacity: 0.7;
+}
+.footer div a {
+  color: black;
+  opacity: 0.85;
+}
